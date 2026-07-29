@@ -1,0 +1,5 @@
+job = {A,B,C,D,E,F,G,H,I,J,K,L};
+resource = [2,3,3,4,2,3,1,4,2,1,1,3];
+duration = [6,8,4,4,4,12,14,6,8,16,2,12];
+precede = [| A,D | A,E | B,F | E,F | B,G | E,G | B,H | C,H | E,H 
+           | D,I | F,I | D,J | F,J | G,J | D,K | F,K | G,K | H,L | K,L |];

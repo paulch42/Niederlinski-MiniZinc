@@ -1,0 +1,9 @@
+glue = {g1,g2,g3};
+line = {l1,l2};
+max_workers = 7;
+salary = [500,900];
+setup_cost = [1000,2000];
+productivity = [| 20, 30, 40
+                | 50, 35, 45
+                |];
+production_target = [120,150,200];

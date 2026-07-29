@@ -1,0 +1,5 @@
+num_machines = 4;
+fixed_cost = [1000,920,800,700];
+unit_cost = [20,24,16,28];
+capacity = [900,1000,1200,1600];
+production_goal = 2000;

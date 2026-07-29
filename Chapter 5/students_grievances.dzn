@@ -1,0 +1,8 @@
+individual = {a,b,c,d,e,f,g,h,i,j};
+category = {female,male,sutdent,administrator,faculty};
+type_of = [| 1,1,1,1,1,0,0,0,0,0
+           | 0,0,0,0,0,1,1,1,1,1
+           | 1,1,1,0,0,0,0,0,0,1
+           | 0,0,0,0,1,1,0,0,0,0
+           | 0,0,0,1,0,0,1,1,1,0
+           |];

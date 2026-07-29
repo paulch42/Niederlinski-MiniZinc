@@ -1,0 +1,13 @@
+% instance of general job shop model
+
+num_machines = 2;
+num_jobs = 4;
+num_tasks = 8;
+
+tasks = [ 1..2, 3..5, 6..6, 7..8 ];
+
+earliest_start = [ 0,0,0,0 ];
+
+performed_on = [ 1,2,2,1,2,2,1,2 ];
+
+duration = [ 2,6,5,3,3,4,5,2 ];

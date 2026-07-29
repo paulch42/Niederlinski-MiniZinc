@@ -1,0 +1,19 @@
+{
+    "openFiles": [
+    ],
+    "openTab": -1,
+    "projectFiles": [
+        "a_simple_maze.dzn",
+        "a_simple_maze.mzn",
+        "farmer_wolf_goat_cabbage.mzn",
+        "golfers.mzn",
+        "lectures.mzn",
+        "mine_field.dzn",
+        "mine_field.mzn",
+        "missionaries_and_cannibals.mzn",
+        "three_cubes.mzn"
+    ],
+    "selectedBuiltinConfigId": "org.gecode.gecode",
+    "selectedBuiltinConfigVersion": "6.4.0",
+    "version": 106
+}

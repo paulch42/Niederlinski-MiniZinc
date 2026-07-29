@@ -1,0 +1,4 @@
+max_num_beneficiaries = 150;
+num_types = 6;
+happiness = [6,25,50,180,200,500];
+cost = [40,300,1500,2000,6500,13000];

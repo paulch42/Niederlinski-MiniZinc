@@ -1,0 +1,36 @@
+{
+    "openFiles": [
+    ],
+    "openTab": -1,
+    "projectFiles": [
+        "assembley_line_balancing.dzn",
+        "assembley_line_balancing.mzn",
+        "assembling_bicycles.mzn",
+        "cumulative_scheduling_2.mzn",
+        "disj.mzn",
+        "drilling_holes.mzn",
+        "due_date_jobs.mzn",
+        "ex2.dzn",
+        "ex3.dzn",
+        "ex3.mzn",
+        "ex4.dzn",
+        "ex9.dzn",
+        "four_jobs.mzn",
+        "job-shop.dzn",
+        "job_shop_scheduling.mzn",
+        "job_shop_scheduling_10.dzn",
+        "job_shop_scheduling_6.dzn",
+        "project.dzn",
+        "project.mzn",
+        "reading_newspapers.mzn",
+        "sequence.dzn",
+        "sequence.mzn",
+        "ship_unloading_and_loading.mzn",
+        "simple_scheduling.mzn",
+        "tsp.dzn",
+        "tsp.mzn"
+    ],
+    "selectedBuiltinConfigId": "solutions.huub",
+    "selectedBuiltinConfigVersion": "100.0.0",
+    "version": 106
+}

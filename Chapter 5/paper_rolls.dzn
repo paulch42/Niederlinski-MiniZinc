@@ -1,0 +1,4 @@
+roll_width = 105;
+num_orders = 3;
+order_width = [25,30,35];
+order_rolls = [100,125,80];

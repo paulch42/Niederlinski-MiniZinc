@@ -1,0 +1,35 @@
+{
+    "openFiles": [
+        "stones_of_heaven.mzn"
+    ],
+    "openTab": 0,
+    "projectFiles": [
+        "a_knight_a_knave_and_a_spy.mzn",
+        "all_things_to_all_people.mzn",
+        "bobs_shish_kebab.mzn",
+        "books.mzn",
+        "car_assembley_line_sequencing.dzn",
+        "car_assembley_line_sequencing.mzn",
+        "city_council_meeting.mzn",
+        "dinner.mzn",
+        "dinner_calamity.mzn",
+        "dj_contest.mzn",
+        "five_rooms.mzn",
+        "killer_sudoku.dzn",
+        "killer_sudoku.mzn",
+        "lectures.mzn",
+        "magic_square.mzn",
+        "pi_day_sudoku.dzn",
+        "pi_day_sudoku.mzn",
+        "soup_selections.mzn",
+        "stable_marraiges_5.dzn",
+        "stable_marriages.mzn",
+        "stable_marriages_1.dzn",
+        "stable_marriages_4.dzn",
+        "stones_of_heaven.mzn",
+        "ten_rooms.mzn"
+    ],
+    "selectedBuiltinConfigId": "org.chuffed.chuffed",
+    "selectedBuiltinConfigVersion": "0.14.0",
+    "version": 106
+}

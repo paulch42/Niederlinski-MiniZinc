@@ -1,0 +1,7 @@
+num_books = 5;
+book_info = [(demand:5000,variable_cost:25,sales_price:50,fixed_cost:80),
+             (demand:4000,variable_cost:20,sales_price:40,fixed_cost:50),
+             (demand:3000,variable_cost:15,sales_price:38,fixed_cost:60),
+             (demand:4000,variable_cost:18,sales_price:32,fixed_cost:30),
+             (demand:3000,variable_cost:22,sales_price:40,fixed_cost:40)];
+max_production = 10000;

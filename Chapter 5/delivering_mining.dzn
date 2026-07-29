@@ -1,0 +1,6 @@
+yard_capacity = 400;
+
+produces = [600,700,700];
+production_cost = [108,96,102];
+
+delivery_cost = [| 14,5,9,24,15 | 30,24,11,8,19 | 9,22,15,7,18 |];

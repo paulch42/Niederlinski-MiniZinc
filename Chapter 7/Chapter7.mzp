@@ -1,0 +1,16 @@
+{
+    "openFiles": [
+        "warehouses_suppliers.mzn",
+        "refining_and_blending_oils.mzn",
+        "healing_the_no_symptoms_disorder.mzn"
+    ],
+    "openTab": 2,
+    "projectFiles": [
+        "healing_the_no_symptoms_disorder.mzn",
+        "refining_and_blending_oils.mzn",
+        "warehouses_suppliers.mzn"
+    ],
+    "selectedBuiltinConfigId": "org.minizinc.mip.highs",
+    "selectedBuiltinConfigVersion": "1.15.1",
+    "version": 106
+}
