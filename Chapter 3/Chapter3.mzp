@@ -5,8 +5,6 @@
     "projectFiles": [
         "a_visit.mzn",
         "cake_theft.mzn",
-        "configuration.dzn",
-        "configuration.mzn",
         "equations_and_conditionals_1.mzn",
         "equations_and_conditionals_2.mzn",
         "examination.dzn",
@@ -17,7 +15,6 @@
         "horse_derby.mzn",
         "horse_race.mzn",
         "open_house.mzn",
-        "queens.mzn",
         "queue_for_plane_tickets.mzn",
         "science_fair.mzn",
         "spring_fete.mzn",

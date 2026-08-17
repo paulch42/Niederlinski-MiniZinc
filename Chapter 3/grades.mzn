@@ -2,8 +2,9 @@ include "globals.mzn";
 
 enum subject = {physics,math,chemistry};
 enum pupil = {andrew,bridget,neil,paul,wendy};
-enum mark = {e,d,c,b,a};
+enum mark = {e,d,c,b,a}; % grades ordered such that better grade has higher value in enumeration
 
+% the grade for each pupil in each subject
 array[pupil,subject] of var mark: grades;
 
 constraint forall(p in pupil)(alldifferent([grades[p,s] | s in subject]));

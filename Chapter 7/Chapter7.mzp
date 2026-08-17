@@ -1,10 +1,7 @@
 {
     "openFiles": [
-        "warehouses_suppliers.mzn",
-        "refining_and_blending_oils.mzn",
-        "healing_the_no_symptoms_disorder.mzn"
     ],
-    "openTab": 2,
+    "openTab": -1,
     "projectFiles": [
         "healing_the_no_symptoms_disorder.mzn",
         "refining_and_blending_oils.mzn",

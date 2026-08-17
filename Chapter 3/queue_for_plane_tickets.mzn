@@ -14,6 +14,9 @@ enum hairstyle = {afro,long,straight,curly,bald};
 
 enum destination = {france,australia,england,africa,italy};
 
+% queue position is the primary value
+% map between it and the other attributes
+
 % map: queue position - passenger
 array[position] of var passenger: passenger_at;
 array[passenger] of var position: pos_of_passenger;
@@ -38,6 +41,7 @@ array[hairstyle] of var position: pos_of_hairstyle;
 array[position] of var destination: destination_at;
 array[destination] of var position: pos_of_destination;
 
+% channel the different views
 constraint inverse(passenger_at,pos_of_passenger);
 constraint inverse(age_at,pos_of_age);
 constraint inverse(pos_of_website,website_at);

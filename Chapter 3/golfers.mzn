@@ -1,5 +1,7 @@
 % Section 3.7.2
 
+% a different approach to the same problem can be found in chapter 2
+
 include "globals.mzn";
 
 int: num_golfers = 4;

@@ -1,8 +1,10 @@
 enum colour = {yellow,red,green,blue};
 enum gardener = {mr_green, mr_yellow, mr_red, mr_blue};
 
+% for each gardener and rose, does that gardener grow the rose?
 array[gardener,colour] of var bool: rose;
 
+% the set of rose colours grown by a gardener
 function var set of colour: colours(gardener: g) = { c | c in colour where rose[g,c] };
 
 constraint forall(c in colour)(count(g in gardener)(rose[g,c]) = 2);

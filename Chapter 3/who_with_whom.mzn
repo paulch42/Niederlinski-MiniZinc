@@ -6,11 +6,13 @@ enum boy = {andy,ben,carl,dusty};
 enum girl = {eva,olive,paula,sabrina};
 enum event = {concert,cinema,theater,exhibition};
 
+% decision variables relate boys and girls to events
 array[event] of var boy: boy_at;
 array[boy] of var event: boy_attended;
 array[event] of var girl: girl_at;
 array[girl] of var event: girl_attended;
 
+% inverse constraints since every person attaends exactly one event
 constraint inverse(boy_at,boy_attended);
 constraint inverse(girl_at,girl_attended);
 

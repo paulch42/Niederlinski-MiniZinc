@@ -1,8 +1,7 @@
 {
     "openFiles": [
-        "delivering_mining.mzn"
     ],
-    "openTab": 0,
+    "openTab": -1,
     "projectFiles": [
         "a_photo.mzn",
         "absurdoland.dzn",
@@ -31,8 +30,8 @@
         "hot_buttered_toast.mzn",
         "napoleonides.dzn",
         "napoleonides.mzn",
-        "papaer_rolls.mzn",
         "paper_rolls.dzn",
+        "paper_rolls.mzn",
         "police_officers.mzn",
         "producing_cars.dzn",
         "producing_cars.mzn",

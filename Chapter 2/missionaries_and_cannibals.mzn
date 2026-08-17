@@ -1,13 +1,19 @@
-% Section
+% Section 2.5.2
 
-enum location = {left,right};
+enum bank = {left,right};
 int: num_subjects = 3;
 set of int: num_on_left = 0..num_subjects;
-type state = tuple(location,num_on_left,num_on_left); % (location of boat,num missionaries of left bank,num cannibals on left bank)
-int: max_steps = 12;
 
+% sate is a 3-tuple: (location of boat, number of missionaries on left bank,number of cannibals on left bank)
+type state = tuple(bank,num_on_left,num_on_left);
+
+% upper limit on number of steps
+int: max_steps = 15;
+
+% sequence of states in solution
 array[1..max_steps] of var state: plan;
 
+% actual number of steps taken
 var 1..max_steps: num_steps;
 
 % initial state: everyone on left bank

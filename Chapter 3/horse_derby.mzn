@@ -1,5 +1,6 @@
 set of int: Position = 1..10;
 
+% decision variable for each horse (its position in the race)
 var Position: sylvester;
 var Position: zebra_wings;
 var Position: frogmans_flippers;

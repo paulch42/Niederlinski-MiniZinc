@@ -16,7 +16,7 @@ array[job] of var TIME: end = [start[j]+duration[j] | j in job];
 
 constraint diffn(start,workstation,duration,resource);
 
-% synnetry breaking
+% symmetry breaking
 constraint forall(w in WKS)(strictly_increasing([start[j] | j in job where workstation[j] = w]));
 
 var int: obj = max(end);

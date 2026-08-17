@@ -1,0 +1,7 @@
+element = {a1,a2,a3,b1,b2,b3,b4,c1,c2};
+classA = {a1,a2,a3};
+classB = {b1,b2,b3,b4};
+classC= {c1,c2};
+incompatible = [{c1,a2},{b2,c2},{c2,b3},{b4,a2},{b3,a1},{a3,b3}];
+price = [1900,750,900,300,500,450,600,700,850];
+max_price = 2100;

@@ -34,7 +34,7 @@ constraint inverse(bought,bought_by);
 constraint inverse(borrowed,borrowed_by);
 
 % group into couples
-constraint forall(s in surname)(sum([surname_of[p] = s | p in  person]) = 2);
+constraint forall(s in surname)(count([surname_of[p] = s | p in  person]) = 2);
 
 % couple is a male and a female
 constraint forall(s in surname)(card({p | p in person where surname_of[p] = s} intersect man) = 1);

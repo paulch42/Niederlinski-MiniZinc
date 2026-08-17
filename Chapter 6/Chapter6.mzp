@@ -30,7 +30,7 @@
         "tsp.dzn",
         "tsp.mzn"
     ],
-    "selectedBuiltinConfigId": "solutions.huub",
-    "selectedBuiltinConfigVersion": "100.0.0",
+    "selectedBuiltinConfigId": "org.chuffed.chuffed",
+    "selectedBuiltinConfigVersion": "0.14.0",
     "version": 106
 }
