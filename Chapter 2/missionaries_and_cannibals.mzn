@@ -4,7 +4,7 @@ enum bank = {left,right};
 int: num_subjects = 3;
 set of int: num_on_left = 0..num_subjects;
 
-% sate is a 3-tuple: (location of boat, number of missionaries on left bank,number of cannibals on left bank)
+% state is a 3-tuple: (location of boat, number of missionaries on left bank, number of cannibals on left bank)
 type state = tuple(bank,num_on_left,num_on_left);
 
 % upper limit on number of steps

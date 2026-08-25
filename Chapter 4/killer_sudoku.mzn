@@ -8,6 +8,7 @@ set of int: GRID = 1..grid_size;
 
 type cell = tuple(GRID,GRID);
 
+% a cage is a contiguous set of squares that must add up to a sum
 type cage = record(
   list of cell: cells,
   int: value
@@ -19,10 +20,10 @@ array[GRID,GRID] of var GRID: square;
 
 function var bool: check_cage(cage: c) = sum([square[p.1,p.2] | p in c.cells]) = c.value;
 
+% the standard sudoku constraints
 constraint forall(r in GRID)(alldifferent([square[r,c] | c in GRID]));
-
 constraint forall(c in GRID)(alldifferent([square[r,c] | r in GRID]));
-
 constraint forall(r, c in UNIT)(alldifferent([square[i,j] | i in (r-1)*unit_size+1..r*unit_size, j in (c-1)*unit_size+1..c*unit_size]));
 
+% cages as defined in the input file
 constraint forall(c in 1..length(cages))(check_cage(cages[c]));

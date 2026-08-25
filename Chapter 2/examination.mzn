@@ -1,4 +1,4 @@
-% Section 3.7.4
+% Section 2.4.7
 
 int: num_papers;
 

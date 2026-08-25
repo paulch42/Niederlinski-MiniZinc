@@ -13,7 +13,6 @@ array[TASK] of var 0..sum(duration): end;
 
 constraint forall(t in TASK)(end[t] = start[t] + duration[t]);
 
-%constraint forall(i in 0..obj)(sum(t in TASK where start[t] <= i /\ i < end[t])(resource[t]) <= max_resources);
 constraint cumulative(start,duration,resource,max_resources);
 
 var 0..sum(duration): obj = max(end);

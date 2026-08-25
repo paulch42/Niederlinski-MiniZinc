@@ -1,3 +1,5 @@
+% Use HIGHS solver
+
 enum item = {pill,suppository,syrup,vaccine, patch};
 
 int: raw_available = 1000;
@@ -15,8 +17,13 @@ array[item] of var 0..100000: production;
 
 constraint production[pill] + production[suppository] <= max_pills_suppositories;
 
+% can't exceed available raw materials
 constraint sum(i in item)(production[i]*raw_needed[i]) <= raw_available;
+
+% can't exceed available textile
 constraint sum(i in item)(production[i]*textile_needed[i]) <= textile_available;
+
+% can't exceed available solvent
 constraint sum(i in item)(production[i]*solvent_needed[i]) <= solvent_available;
 
 var float: total_profit = sum(i in item)(production[i] * profit[i]);

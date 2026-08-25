@@ -25,14 +25,14 @@ var 1..max_steps: num_steps;
 % the path taken
 array[1..max_steps] of var square: path;
 
-% constraint start and end points
+% constrain start and end points
 constraint path[1] = start;
 constraint path[num_steps] = end;
 
 % each step must be a valid move
 constraint forall(i in 1..num_steps-1)((path[i],path[i+1]) in steps \/ (path[i+1],path[i]) in steps);
 
-% remain at end once reached
+% after reaching end, default remaining squares to (0,0)
 constraint forall(i in num_steps+1..max_steps)(path[i] = (0,0)); % making all subsequent steps 'end' instead of (0,0) takes much longer (?)
 
 solve minimize num_steps;

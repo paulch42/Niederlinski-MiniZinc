@@ -28,14 +28,32 @@ constraint inverse(rooms,rooms_person);
 constraint inverse(days,days_person);
 constraint inverse(times,times_person);
 
-% bijections allow constraints to be specified simply
+% 1: andrew attends lecture by prof paul
 constraint professors[andrew] = paul;
+
+% 2: tuesday lecture does not start at 2pm
 constraint times[days_person[tue]] != t200;
+
+% 3: lecture on kmnwledge enginweering does not start at 5:30pm
 constraint times[topics_person[knowledge_engineering]] != t530;
+
+% 4: thursday lecture starts at 3:45pm
 constraint times[days_person[thu]] = t345;
+
+% 5: christopher attends lecture on econometic models
 constraint topics[christopher] = econometric_models;
+
+% 6: barbara attends lecture on tuesdays
 constraint days[barbara] = tue;
+
+% 7: artificial intelligence lecture in in building D3
 constraint rooms[topics_person[artificial_intelligence]] = d3;
+
+% 8: wednesday lecture is in room 104
 constraint rooms[days_person[wed]] = r104;
+
+% 9: prof smith does not give lecture on ecomometric models
 constraint topics[professors_person[smith]] != econometric_models;
+
+% 10: prof jones does not give lecture in room K2
 constraint rooms[professors_person[jones]] != k2;

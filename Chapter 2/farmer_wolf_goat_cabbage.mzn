@@ -14,7 +14,7 @@ array[1..max_steps] of var state: plan;
 % actual number of steps taken
 var 1..max_steps: num_steps;
  
- % all on left bank at start
+% all on west bank at start
 constraint plan[1] = (farmer:west,wolf:west,goat:west,cabbage:west);
 
 % in each step farmer crosses
@@ -30,7 +30,7 @@ constraint forall(i in 1..num_steps-1)(plan[i].wolf = plan[i].goat -> plan[i].fa
 % whenever goat and cabbage are on same side, then farmer on that side as well
 constraint forall(i in 1..num_steps-1)(plan[i].goat = plan[i].cabbage -> plan[i].farmer = plan[i].cabbage);
 
-% once all on right bank, stay there
+% once all on east bank, stay there
 constraint forall(i in num_steps..max_steps)(plan[i] = (farmer:east,wolf:east,goat:east,cabbage:east));
 
 solve minimize num_steps;

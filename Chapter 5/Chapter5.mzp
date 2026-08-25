@@ -4,8 +4,6 @@
     "openTab": -1,
     "projectFiles": [
         "a_photo.mzn",
-        "absurdoland.dzn",
-        "absurdoland.mzn",
         "allocating_machines.dzn",
         "allocating_machines.mzn",
         "building_a_house.dzn",
@@ -42,7 +40,7 @@
         "warehouse_location_1.dzn",
         "warehouse_location_2.dzn"
     ],
-    "selectedBuiltinConfigId": "org.chuffed.chuffed",
-    "selectedBuiltinConfigVersion": "0.14.0",
+    "selectedBuiltinConfigId": "org.gecode.gecode",
+    "selectedBuiltinConfigVersion": "6.4.0",
     "version": 106
 }

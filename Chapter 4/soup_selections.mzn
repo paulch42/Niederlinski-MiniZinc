@@ -28,24 +28,24 @@ constraint inverse(surname_at,surname_pos);
 constraint inverse(soup_at,soup_pos);
 constraint inverse(restaurant_at,restaurant_pos);
 
-% 1
+% 1: gloria works for apple orchard or hannigans, prepared french onion or split pea
 constraint soup_at[person_pos[gloria]] in {french_onion,split_pea};
 constraint restaurant_at[person_pos[gloria]] in {apple,hennigans};
 
-% 2
+% 2: one who made ministrone sat in lower numbers seat than marvin
 constraint soup_pos[ministrone] < person_pos[marvin];
 
-% 3
+% 3: anderson sat directly across from michel's cafe chef
 constraint opposite(surname_pos[anderson], restaurant_pos[michels]);
 
-% 4
+% 4: 
 constraint (person_pos[marvin] = 5 /\ opposite(soup_pos[asparagus],soup_pos[chicken_noodle]))
         \/ (opposite(person_pos[marvin],soup_pos[chicken_noodle]) /\ soup_pos[asparagus] = 5);
 
-% 5
+% 5: norville sat next to country kitchen chef
 constraint next_to(person_pos[norville], restaurant_pos[country]);
 
-% 6
+% 6: 
 constraint (person_pos[quincy] = surname_pos[dugan] /\ not opposite(restaurant_pos[village],soup_pos[asparagus]))
         \/ (restaurant_pos[village] = surname_pos[dugan] /\ not opposite(person_pos[quincy],soup_pos[asparagus]));
 
@@ -53,23 +53,23 @@ constraint (person_pos[quincy] = surname_pos[dugan] /\ not opposite(restaurant_p
 constraint (restaurant_pos[pine_cove] = surname_pos[anderson] /\ soup_pos[ministrone] != 4)
         \/ (restaurant_pos[pine_cove] != soup_pos[ministrone] /\ surname_pos[anderson] = 4);
 
-% 8
+% 8: burns works at apple orchard and didn't prepare split pea
 constraint restaurant_at[surname_pos[burns]] = apple;
 constraint soup_at[surname_pos[burns]] != split_pea;
 
-% 9
+% 9: six chefs are jenna, chef named dugan, pine cove chef, clam chowder chef, chef in seat 3, chef across from dugan
 constraint card({person_pos[jenna], surname_pos[dugan], restaurant_pos[pine_cove], soup_pos[chowder], 3, (surname_pos[dugan] + size div 2) mod size}) = 6;
 
 % 10
 constraint (person_pos[isabel] = restaurant_pos[michels] /\ surname_pos[friedman] = soup_pos[chicken_noodle])
         \/ (person_pos[isabel]= soup_pos[chicken_noodle] /\  restaurant_pos[michels] = surname_pos[friedman]);
 
-% 11
+% 11: marvin didn't prepare clam chowder
 constraint soup_at[person_pos[marvin]] != chowder;
 
-% 12
+% 12: jenna was in an odd numbered seat and sat next to caruso
 constraint person_pos[jenna] mod 2 = 1;
 constraint next_to(person_pos[jenna], surname_pos[caruso]);
 
-% 13
+% 13: pine cove chef wasn't in seat 6
 constraint restaurant_pos[pine_cove] != 6;

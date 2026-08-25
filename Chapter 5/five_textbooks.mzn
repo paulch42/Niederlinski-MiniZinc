@@ -1,4 +1,4 @@
-% use COIN-BC solver
+% use COIN-BC or Huub solver
 
 int: num_books;
 set of int: BOOK = 1..num_books;
@@ -16,7 +16,10 @@ constraint(forall(b in BOOK)(assert(book_info[b].fixed_cost >= 0, "Fixed cost fo
 
 array[BOOK] of var 0..max_demand: produce;
 
+% don't produce any more books than the demand
 constraint forall(b in BOOK)(produce[b] <= book_info[b].demand);
+
+% can't exceed maximum production capacity
 constraint sum(produce) <= max_production;
 
 var int: profit = sum(b in BOOK)(produce[b] * (book_info[b].sales_price - book_info[b].variable_cost) - ((produce[b] > 0) * book_info[b].fixed_cost * 1000));

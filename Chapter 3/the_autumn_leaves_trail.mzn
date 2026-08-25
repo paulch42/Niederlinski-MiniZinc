@@ -1,4 +1,4 @@
-% The values are 10 times that of the original problem to remain in the integer domain.
+% The values are 10 times that of the original problem statement to remain in the integer domain.
 
 include "globals.mzn";
 
@@ -12,17 +12,15 @@ int: num_spots = card(spot);
 array[POS] of var spot: spots;
 array[spot] of var POS: position;
 
-array[POS] of var DIST: distance; % Total distance to each position
+array[POS] of var DIST: distance; % Total distance to each position from start
 array[POS] of var DIST: deltas;   % Distance between successive positions
 
 function var DIST: distance_to(spot: s) = distance[position[s]];
 
 constraint inverse(spots,position);
 
+% channel distance and deltas
 constraint forall(i in 2..num_spots)(deltas[i] = distance[i] - distance[i-1]);
-
-% no two consecutive spots are the same distance apart
-constraint alldifferent(deltas);
 
 % start at summerset
 constraint spots[1] = summerset;
@@ -32,24 +30,26 @@ constraint distance[1] = 0;
 constraint spots[num_spots] = fallbrook;
 constraint distance[num_spots] = 100;
 
-% maxomum distance between spots is 3.6 miles, and minimum 0.4 miles
+% 1: no two consecutive spots are the same distance apart
+%    maximum distance between spots is 3.6 miles, and minimum 0.4 miles
+constraint alldifferent(deltas);
 constraint max(deltas) = 36;
 constraint min([deltas[i] | i in 2..num_spots]) = 4;
 
-% first scenic spot after summerset is at 1.8 miles
-constraint deltas[2] = 18;
+% 2: distance from summerset (start point) to cucumber creek is same as from white oak inn to old man mountain
+%    white oak inn is north of old man mountain, so subtraction is positive
+constraint distance_to(cucumber_creek) = distance_to(white_oak_inn) - distance_to(old_man_mountain);
 
-% amish covered bridge is not last spot and is 1 mile south (i.e. before) of fallbrook
+% 3: amish covered bridge is not last spot and is 1 mile south (i.e. before) of fallbrook
 constraint spot[num_spots-1] != amish_covered_bridge;
 constraint distance_to(fallbrook) - distance_to(amish_covered_bridge) = 10;
 
-% distance from summerset (start point) to cucumber creek is same as from white oak inn to old man mountain
-% white oak inn is north of old man mountain, so subtraction is positive
-constraint distance_to(cucumber_creek) = distance_to(white_oak_inn) - distance_to(old_man_mountain);
+% 4: cucumber creek is twice as far from sugar maple farm as it is from old man mountain
+constraint abs(distance_to(sugar_maple_farm) - distance_to(cucumber_creek))
+           = 2 * abs(distance_to(old_man_mountain) - distance_to(cucumber_creek));
 
-% white oak inn and cucumber creek are more than 5 miles apart
+% 5: white oak inn and cucumber creek are more than 5 miles apart
 constraint abs(distance_to(white_oak_inn) - distance_to(cucumber_creek)) > 50;
 
-% cucumber creek is twice as far from sugar maple farm as it is from old man mountain
-constraint abs(distance_to(sugar_maple_farm) - distance_to(cucumber_creek))
-           = 2 * abs(distance_to(old_man_mountain) - distance_to(cucumber_creek))
+% 6: first scenic spot after summerset is at 1.8 miles
+constraint deltas[2] = 18;

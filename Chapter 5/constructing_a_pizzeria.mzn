@@ -9,7 +9,10 @@ set of int: TIME = 0..max_time;
 array[ACTIVITY] of var TIME: start;
 array[ACTIVITY] of var TIME: end;
 
+% end of an activity is start plus duration
 constraint forall(a in ACTIVITY)(end[a] = start[a] + duration[a]);
+
+% respect activity precedence constraints
 constraint forall(p in PRECEDE)(end[precede[p,1]] <= start[precede[p,2]]);
 
 solve minimize max(end);

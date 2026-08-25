@@ -1,5 +1,7 @@
 % Section 6.17-18
 
+% Use Huub solver
+
 include "globals.mzn";
 
 int: num_machines;

@@ -7,6 +7,8 @@
         "a_simple_maze.mzn",
         "configuration.dzn",
         "configuration.mzn",
+        "examination.dzn",
+        "examination.mzn",
         "farmer_wolf_goat_cabbage.mzn",
         "golfers.mzn",
         "lectures.mzn",
@@ -21,7 +23,7 @@
         "water_jugs.mzn",
         "who_is_the_killer.mzn"
     ],
-    "selectedBuiltinConfigId": "org.chuffed.chuffed",
-    "selectedBuiltinConfigVersion": "0.14.0",
+    "selectedBuiltinConfigId": "org.gecode.gecode",
+    "selectedBuiltinConfigVersion": "6.4.0",
     "version": 106
 }

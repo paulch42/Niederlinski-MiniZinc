@@ -23,9 +23,19 @@ constraint alldifferent([Fred,Joe,Tom,Bob]);
 % Colours in different positions; i.e. no two golfers have same colour
 constraint alldifferent([Red,Orange,Blue,Plaid]);
 
-constraint Joe = 2;
+% someone is wearing read
+% guaranteed by model definition
+
+% golfer to fred's right is wearing blue
 constraint Blue = Fred+1;
+
+% joe is second
+constraint Joe = 2;
+
+% bob is wearing plaid
 constraint Bob = Plaid;
+
+% tom isn't first or fourth, and is not waering orange
 constraint Tom != 1;
 constraint Tom != 4;
 constraint Tom != Orange;

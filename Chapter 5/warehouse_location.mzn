@@ -14,8 +14,10 @@ set of int: CUSTOMER = 1..num_customers;
 array[WAREHOUSE] of var set of CUSTOMER: service;
 array[CUSTOMER] of var set of WAREHOUSE: serviced_by;
 
+% each customer served by one warehouse
 constraint partition_set(service, CUSTOMER);
-constraint forall(c in CUSTOMER, w in serviced_by[c])(c in service[w]);
-constraint forall(w in WAREHOUSE, c in service[w])(w in serviced_by[c]);
+
+% channel service and serviced by
+constraint inverse_set(service,serviced_by);
 
 solve minimize sum(c in CUSTOMER, w in serviced_by[c])(delivery_cost[c,w]) + sum(w in WAREHOUSE where service[w] != {})(building_cost[w]);

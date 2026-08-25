@@ -1,3 +1,5 @@
+% Section 2.6.4
+
 % initial water volume (must not exceed capacity of jug A)
 int: water_volume = 8;
 

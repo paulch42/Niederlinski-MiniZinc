@@ -10,16 +10,13 @@
         "disj.mzn",
         "drilling_holes.mzn",
         "due_date_jobs.mzn",
-        "ex2.dzn",
-        "ex3.dzn",
-        "ex3.mzn",
-        "ex4.dzn",
-        "ex9.dzn",
         "four_jobs.mzn",
         "job-shop.dzn",
+        "job_shop_scheduling.dzn",
         "job_shop_scheduling.mzn",
         "job_shop_scheduling_10.dzn",
         "job_shop_scheduling_6.dzn",
+        "more_complicated_scheduling.dzn",
         "project.dzn",
         "project.mzn",
         "reading_newspapers.mzn",
@@ -30,7 +27,7 @@
         "tsp.dzn",
         "tsp.mzn"
     ],
-    "selectedBuiltinConfigId": "org.chuffed.chuffed",
-    "selectedBuiltinConfigVersion": "0.14.0",
+    "selectedBuiltinConfigId": "org.gecode.gecode",
+    "selectedBuiltinConfigVersion": "6.4.0",
     "version": 106
 }

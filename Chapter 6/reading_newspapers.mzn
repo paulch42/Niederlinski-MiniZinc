@@ -22,7 +22,8 @@ constraint forall(s in student)(disjunctive([start[s,t] | t in TASK],[duration[s
 constraint forall(s in student)(strictly_increasing([start[s,t] | t in TASK]));
 
 % no newspaper read simultaneously by two students
-constraint forall(n in newspaper)(disjunctive([start[s,t] | s in student, t in TASK where newspaper_at[s,t] = n], [duration[s,t] | s in student, t in TASK where newspaper_at[s,t] = n]));
+constraint forall(n in newspaper)(disjunctive([start[s,t] | s in student, t in TASK where newspaper_at[s,t] = n],
+                                              [duration[s,t] | s in student, t in TASK where newspaper_at[s,t] = n]));
 
 % minimum start times for each student
 constraint forall(s in student)(start[s,1] >= min_start[s]);

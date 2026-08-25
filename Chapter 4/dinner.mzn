@@ -34,42 +34,42 @@ constraint inverse(dish_of,eaten_by);
 constraint inverse(beverage_of,drank_by);
 constraint inverse(potato_of,potato_eaten_by);
 
-% the only person with the same first and last name initial had ribs
+% 1: the only person with the same first and last name initial had ribs
 constraint forall(p in person)(person_initial[p] = surname_initial[surname_of[p]] <-> p = eaten_by[ribs]);
 
-% 2
+% 2: petroski and the shrimp eater drank root beer and had lyonnaise potatos
 constraint (person_of[petroski] = potato_eaten_by[lyonnaise] /\ eaten_by[shrimp] = drank_by[root_beer])
         \/ (person_of[petroski] = drank_by[root_beer] /\ eaten_by[shrimp] = potato_eaten_by[lyonnaise]);
 
-% filet mignon did not drink lemonade
+% 3: filet mignon eater did not drink lemonade
 constraint drank_by[lemonade] != eaten_by[filet_mignon];
 
-% scalloped potatos din't eat sirloin steak or drink water
+% 4: scalloped potato eater didn't eat sirloin steak or drink water
 constraint potato_eaten_by[scalloped] != eaten_by[sirloin_steak];
 constraint potato_eaten_by[scalloped] != drank_by[water];
 
-% root beer drinker has same first name initial as george's surname
+% 5: root beer drinker has same first name initial as george's surname
 constraint person_initial[drank_by[root_beer]] = surname_initial[surname_of[george]];
 
-% theresa didn't drink water
+% 6: theresa didn't drink water
 constraint beverage_of[theresa] != water;
 
-% shrip eater and baked potato eater have different gender
+% 7: shrip eater and baked potato eater have different gender
 constraint eaten_by[shrimp] in man <-> not(potato_eaten_by[baked] in man);
 
-% first name initial of crab eater is same as surname initial of mashed potato eater
+% 8: first name initial of crab eater is same as surname initial of mashed potato eater
 constraint person_initial[eaten_by[crab]] = surname_initial[surname_of[potato_eaten_by[mashed]]];
 
-% first name initial of lemonade drinker is same as surname initial of lyonnaise potato eater
+% 9: first name initial of lemonade drinker is same as surname initial of lyonnaise potato eater
 constraint person_initial[drank_by[lemonade]] = surname_initial[surname_of[potato_eaten_by[lyonnaise]]];
 
-% patti's surname is not chaisson; chaisson did not eat french fried or lyonnaise potatos
+% 10: patti's surname is not chaisson; chaisson did not eat french fried or lyonnaise potatos
 constraint person_of[chiasson] != patti;
 constraint not(potato_of[person_of[chiasson]] in {french_fried,lyonnaise});
 
-% truang did not have french fried or mashed potatos, or drink ginger ale
+% 11: truang did not have french fried or mashed potatos, or drink ginger ale
 constraint not(potato_of[person_of[truang]] in {french_fried,mashed});
 constraint beverage_of[person_of[truang]] != ginger_ale;
 
-% colleen had filet mignon or sirloin
+% 12: colleen had filet mignon or sirloin
 constraint dish_of[colleen] in {filet_mignon,sirloin_steak};

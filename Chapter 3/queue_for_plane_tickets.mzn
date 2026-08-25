@@ -49,62 +49,62 @@ constraint inverse(lives_at,pos_of_lives);
 constraint inverse(hairstyle_at,pos_of_hairstyle);
 constraint inverse(destination_at,pos_of_destination);
 
-% 1
+% 1: person in middle reads jeff rense program
 constraint website_at[3] = jeff_rense;
 
-% 2
+% 2: bob is first in queue
 constraint passenger_at[1] = bob;
 
-% 3
+% 3: person reading rush limbaugh show is next to person who lives in youth hostel
 constraint abs(pos_of_website[rush_limbaugh] - pos_of_lives[hostel]) = 1;
 
-% 4
-constraint pos_of_destination[africa] = pos_of_passenger[rachael]+1;
+% 4: person going to africa is behind rachael
+constraint pos_of_destination[africa] > pos_of_passenger[rachael];
 
-% 5
+% 5: person who lives in a village is 52
 constraint lives_at[pos_of_age[a52]] = village;
 
-% 6
+% 6: person going to australia has straight hair
 constraint hairstyle_at[pos_of_destination[australia]] = straight;
 
-% 7
+% 7: person going to africa reads jeff rense program
 constraint website_at[pos_of_destination[africa]] = jeff_rense;
 
-% 8
-constraint pos_of_age[a14] = 5;
+% 8: 14 year old is at end of queue
+constraint pos_of_age[a14] = card(position);
 
-% 9
+% 9: amy reads american culture
 constraint passenger_at[pos_of_website[american_culture]] = amy;
 
-% 10
+% 10: person going to italy has long hair
 constraint hairstyle_at[pos_of_destination[italy]] = long;
 
-% 11
+% 11: keely lives in a village
 constraint lives_at[pos_of_passenger[keeley]] = village;
 
-% 12
+% 12: the 46 year old is bald
 constraint hairstyle_at[pos_of_age[a46]] = bald;
 
-% 13
+% 13: fourth in queue is going to england
 constraint destination_at[4] = england;
 
-% 14
+% 14: people with curly and striaght hair are next to each other
 constraint abs(pos_of_hairstyle[curly] - pos_of_hairstyle[straight]) = 1;
 
-% 15
+% 15: person who reads conservapedia is next to person with an afro
 constraint abs(pos_of_website[conservapedia] - pos_of_hairstyle[afro]) = 1;
 
-% 16
+% 16: person next to rachael has an afro
 constraint abs(pos_of_passenger[rachael] - pos_of_hairstyle[afro]) = 1;
 
-% 17
+% 17: the 21 year old lives in a youth hostel
 constraint age_at[pos_of_lives[hostel]] = a21;
 
-% 18
+% 18: person who reads conservapedia has long hair
 constraint hairstyle_at[pos_of_website[conservapedia]] = long;
 
-% 19
+% 19: the 81 year old lives on a farm
 constraint age_at[pos_of_lives[farm]] = a81;
 
-% 20
+% 20: person going to france lives in a town
 constraint lives_at[pos_of_destination[france]] = town;

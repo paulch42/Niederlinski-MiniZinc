@@ -12,13 +12,14 @@ var bool: Alex;
 var bool: Ben;
 var bool: Colin;
 
-% Truth of statements made by the the suspects
+% alex statement
 constraint Alex -> ben_mike_friends /\ not colin_mike_friends;
+
+% ben statement
 constraint Ben -> not ben_mike_friends;
+
+% colin statement
 constraint Colin -> alex_mike_friends /\ ben_mike_friends;
 
-% Someone (killer) is not telling the truth
-constraint not Alex \/ not Ben \/ not Colin;
-
-% At least two people telling the truth
-constraint (Alex /\ Ben) \/ (Alex /\ Colin) \/ (Ben /\ Colin);
+% Someone (killer) is lying, others telling truth
+constraint not Alex xor not Ben xor not Colin;

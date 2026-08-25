@@ -1,5 +1,7 @@
 % Section 6.15
 
+% Use Chuffed solver
+
 % Doesn't address constraint "each docker to be employed no more than 8 hours"
 % There are 12 dockers, so total available time is 96 hours, but the total time required for all tasks is 393 - "sum(hours)"
 
